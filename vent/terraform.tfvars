@@ -1,2 +1,2 @@
 rname = example-resources
-location = west europe
+location = "west europe"
