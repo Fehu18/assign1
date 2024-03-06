@@ -80,7 +80,7 @@ resource "azurerm_key_vault" "kv" {
   location            = "westeurope"
   resource_group_name = "example-resources"
 
-sku_name {
+sku {
     tier = "Standard"
     size = "S1"
   }
@@ -88,7 +88,7 @@ sku_name {
 }
 
 
-resource "azurerm_app_service" "appse" {
+resource "azurerm_web_app" "appse" {
   name                = "appse1"
   location            = "westeurope"
   resource_group_name = "example-resources"
