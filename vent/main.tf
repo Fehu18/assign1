@@ -47,7 +47,7 @@ data "azurerm_client_config" "current" {}
 
 
 resource "azurerm_key_vault" "kv" {
-  name                        = "kv12"
+  name                        = "keyvault01a"
   location                    = azurerm_resource_group.rg5.location
   resource_group_name         = azurerm_resource_group.rg5.name
   enabled_for_disk_encryption = true
