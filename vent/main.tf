@@ -8,6 +8,7 @@ terraform {
       version = "~>3.0"
     }
   }
+}
 
 resource "azurerm_resource_group" "rg5" {
   name     = var.rname
