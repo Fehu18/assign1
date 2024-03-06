@@ -98,15 +98,6 @@ resource "azurerm_app_service" "appse" {
   resource_group_name = var.rname
   app_service_plan_id = azurerm_service_plan.app.id
 
-sku {
-    tier = "Standard"
-    size = "S1"
-    name = "Assign1"
-  }
-os_profile {
-    windows = true
-}
-
   app_settings = {
     "SOME_KEY" = "some-value"
   }
