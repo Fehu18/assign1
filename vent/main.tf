@@ -88,7 +88,7 @@ resource "azurerm_key_vault" "kv" {
   name                = "appse1"
   location            = "westeurope"
   resource_group_name = "example-resources"
-  app_service_plan_id = azurerm_service_plan.app.id
+  service_plan_id = azurerm_service_plan.app.id
   https_only            = true
   site_config { 
     minimum_tls_version = "1.2"
