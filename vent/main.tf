@@ -85,7 +85,7 @@ sku {
   reserved = "false"
 
   os_profile {
-    os_type = "Windows"
+    windows = true
   }
 }
 
