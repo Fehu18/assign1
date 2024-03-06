@@ -71,7 +71,7 @@ resource "azurerm_key_vault" "kv" {
     ]
   }
 }
-resource "azurerm_service_plan" "app" {
+resource "azurerm_service_plan" "app" :
   name                = "app1"
   location            = var.location
   resource_group_name = var.rname
@@ -89,7 +89,7 @@ sku {
   }
 
   
-}  
+
 
 resource "azurerm_app_service" "appse" {
   name                = "appse1"
