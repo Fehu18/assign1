@@ -81,15 +81,10 @@ sku {
     size = "S1"
   }
 
-  type     = "Windows"
-  reserved = "false"
-
 }
 
-  
 
-
-resource "azurerm_app_service" "appse" {
+resource "azurerm_app_service_plan" "appse" {
   name                = "appse1"
   location            = var.location
   resource_group_name = var.rname
