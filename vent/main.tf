@@ -48,8 +48,8 @@ data "azurerm_client_config" "current" {}
 
 resource "azurerm_key_vault" "kv" {
   name                        = "kv12"
-  location                    = var.location
-  resource_group_name         = var.rname
+  location                    = azurerm_resource_group.rg5.location
+  resource_group_name         = azurerm_resource_group.rg5.name
   enabled_for_disk_encryption = true
   tenant_id                   = data.azurerm_client_config.current.tenant_id
   soft_delete_retention_days  = 7
