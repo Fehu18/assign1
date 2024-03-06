@@ -80,13 +80,16 @@ resource "azurerm_service_plan" "app" {
     tier = "Standard"
     size = "S1"
   }
+os_profile {
+    os_type = "your_os_type"
 }
+}  
 
 resource "azurerm_app_service" "appse" {
   name                = "appse1"
   location            = var.location
   resource_group_name = var.rname
-  app_service_plan_id = azurerm_app_service_plan.app.id
+  app_service_plan_id = azurerm_service_plan.app.id
 
   
 
