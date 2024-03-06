@@ -14,7 +14,7 @@ provider "azurerm"{
   skip_provider_registration = true
   subscription_id = "dd841e0c-a76f-4d5d-ae2f-b0645b248ae5"
 }
-resource "azurerm_resource_group" "rg5" {
+/*resource "azurerm_resource_group" "rg5" {
   name     = var.rname
   location = var.location
 }
@@ -74,11 +74,11 @@ resource "azurerm_key_vault" "kv" {
       "Get",
     ]
   }
-}
-/*resource "azurerm_service_plan" "app" {
+} */
+ resource "azurerm_service_plan" "app" {
   name                = "app1"
-  location            = var.location
-  resource_group_name = var.rname
+  location            = "westeurope"
+  resource_group_name = "example-resources"
 
 sku_name {
     tier = "Standard"
@@ -90,12 +90,12 @@ sku_name {
 
 resource "azurerm_app_service" "appse" {
   name                = "appse1"
-  location            = var.location
-  resource_group_name = var.rname
+  location            = "westeurope"
+  resource_group_name = "example-resources"
   app_service_plan_id = azurerm_service_plan.app.id
 
 
-  } */
+  } 
 
 
 
