@@ -84,7 +84,7 @@ resource "azurerm_key_vault" "kv" {
   }
 
 
-  resource "azurerm_web_app" "appse" {
+  resource "azurerm_linux_web_app" "appse" {
   name                = "appse1"
   location            = "westeurope"
   resource_group_name = "example-resources"
