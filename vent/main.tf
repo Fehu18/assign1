@@ -76,6 +76,18 @@ resource "azurerm_service_plan" "app" {
   location            = var.location
   resource_group_name = var.rname
 
+sku {
+    tier = "standard"
+    size = "S1"
+  }
+
+  kind     = "Ubuntu"
+  reserved = "true"
+
+  os_profile {
+    os_type = "Ubuntu"
+  }
+
   
 }  
 
@@ -91,7 +103,7 @@ sku {
     name = "Assign1"
   }
 os_profile {
-    os_type = "ubuntu"
+    os_type = "Ubuntu"
 }
 
   app_settings = {
