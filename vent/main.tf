@@ -76,12 +76,12 @@ resource "azurerm_service_plan" "app" {
   location            = var.location
   resource_group_name = var.rname
 
-  sku {
+  "sku" {
     tier = "Standard"
     size = "S1"
   }
 os_profile {
-    os_type = "your_os_type"
+    os_type = "ubuntu"
 }
 }  
 
