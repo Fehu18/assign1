@@ -3,8 +3,8 @@ resource "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg5" {
-  name     = "example-resources"
-  location = "West Europe"
+  name     = var.rname
+  location = var.location
 }
 
 resource "azurerm_virtual_network" "vnet" {
@@ -41,8 +41,8 @@ data "azurerm_client_config" "current" {}
 
 resource "azurerm_key_vault" "kv" {
   name                        = "kv12"
-  location                    = "west europe"
-  resource_group_name         = "example-resources"
+  location                    = var.location
+  resource_group_name         = var.rname
   enabled_for_disk_encryption = true
   tenant_id                   = data.azurerm_client_config.current.tenant_id
   soft_delete_retention_days  = 7
@@ -70,8 +70,8 @@ resource "azurerm_key_vault" "kv" {
 }
 resource "azurerm_app_service_plan" "app" {
   name                = "app1"
-  location            = "west europe"
-  resource_group_name = "example-resources"
+  location            = var.location
+  resource_group_name = var.rname
 
   sku {
     tier = "Standard"
@@ -81,8 +81,8 @@ resource "azurerm_app_service_plan" "app" {
 
 resource "azurerm_app_service" "appse" {
   name                = "appse1"
-  location            = "west europe"
-  resource_group_name = "example-resources"
+  location            = var.location
+  resource_group_name = var.rname
   app_service_plan_id = azurerm_app_service_plan.app.id
 
   
