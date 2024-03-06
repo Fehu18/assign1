@@ -76,13 +76,7 @@ resource "azurerm_service_plan" "app" {
   location            = var.location
   resource_group_name = var.rname
 
-  sku {
-    tier = "Standard"
-    size = "S1"
-  }
-os_profile {
-    os_type = "ubuntu"
-}
+  
 }  
 
 resource "azurerm_app_service" "appse" {
@@ -91,7 +85,14 @@ resource "azurerm_app_service" "appse" {
   resource_group_name = var.rname
   app_service_plan_id = azurerm_service_plan.app.id
 
-  
+sku {
+    tier = "Standard"
+    size = "S1"
+    name = "Assign1"
+  }
+os_profile {
+    os_type = "ubuntu"
+}
 
   app_settings = {
     "SOME_KEY" = "some-value"
