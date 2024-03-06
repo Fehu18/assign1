@@ -71,22 +71,19 @@ resource "azurerm_key_vault" "kv" {
     ]
   }
 }
-resource "azurerm_service_plan" "app" {
+resource "azurerm_app_service_plan" "app" {
   name                = "app1"
   location            = var.location
   resource_group_name = var.rname
 
 sku {
-    tier = "standard"
+    tier = "Standard"
     size = "S1"
   }
 
-  kind     = "Windows"
+  type     = "Windows"
   reserved = "false"
 
-  os_profile {
-    windows = true
-  }
 }
 
   
@@ -98,8 +95,7 @@ resource "azurerm_app_service" "appse" {
   resource_group_name = var.rname
   app_service_plan_id = azurerm_service_plan.app.id
 
-  app_settings = {
-    "SOME_KEY" = "some-value"
+
   }
 
 }
