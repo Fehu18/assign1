@@ -92,4 +92,4 @@ resource "azurerm_app_service" "appse" {
   }
 
   
-}
+
