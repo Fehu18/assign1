@@ -81,11 +81,11 @@ sku {
     size = "S1"
   }
 
-  kind     = "Ubuntu"
-  reserved = "true"
+  kind     = "Windows"
+  reserved = "false"
 
   os_profile {
-    os_type = "Ubuntu"
+    os_type = "Windows"
   }
 
   
@@ -103,7 +103,7 @@ sku {
     name = "Assign1"
   }
 os_profile {
-    os_type = "Ubuntu"
+    windows = true
 }
 
   app_settings = {
