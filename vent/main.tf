@@ -79,20 +79,20 @@ resource "azurerm_key_vault" "kv" {
   name                = "app1"
   location            = "westeurope"
   resource_group_name = "example-resources"
-
-sku {
-    tier = "Standard"
-    size = "S1"
+  os_type             = "Linux"
+  sku_name            = "B1"
   }
 
-}
 
-
-resource "azurerm_web_app" "appse" {
+  resource "azurerm_web_app" "appse" {
   name                = "appse1"
   location            = "westeurope"
   resource_group_name = "example-resources"
   app_service_plan_id = azurerm_service_plan.app.id
+  https_only            = true
+  site_config { 
+    minimum_tls_version = "1.2"
+}
 
 
   } 
