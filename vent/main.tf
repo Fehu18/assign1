@@ -90,11 +90,10 @@ resource "azurerm_app_service_plan" "appse" {
   resource_group_name = var.rname
   app_service_plan_id = azurerm_service_plan.app.id
 
-sku {
+  sku {
     tier = "Standard"
     size = "S1"
   }
-
 
   }
 
